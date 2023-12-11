@@ -1,9 +1,11 @@
 package com.example.stringboot_hieugui.service.impl;
 
 import com.example.stringboot_hieugui.repository.ProductRepository;
-import com.example.stringboot_hieugui.response.ProductDetailResponse;
+import com.example.stringboot_hieugui.response.ProductResponse;
 import com.example.stringboot_hieugui.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,10 +21,19 @@ public class ProductImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDetailResponse> findAllProductDetailResponse() {
-        List<ProductDetailResponse> listProdcutDetailResponse = productRepository.findAllProductDetailResponse();
-        if (listProdcutDetailResponse != null) {
-            return listProdcutDetailResponse;
+    public List<ProductResponse> findAllProductDetailResponse() {
+        List<ProductResponse> listProductDetailResponse = productRepository.findAllProductDetailResponse();
+        if (listProductDetailResponse != null) {
+            return listProductDetailResponse;
+        }
+        return null;
+    }
+
+    @Override
+    public Page<ProductResponse> findAllProductDetailResponsePage(Pageable pageable) {
+        Page<ProductResponse> pageProductDetailResponse = productRepository.findAllProductDetailResponsePage(pageable);
+        if (pageProductDetailResponse != null) {
+            return pageProductDetailResponse;
         }
         return null;
     }
