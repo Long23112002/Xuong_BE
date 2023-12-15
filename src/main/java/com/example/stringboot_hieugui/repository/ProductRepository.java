@@ -1,5 +1,6 @@
 package com.example.stringboot_hieugui.repository;
 
+import com.example.stringboot_hieugui.entity.Brand;
 import com.example.stringboot_hieugui.entity.Product;
 import com.example.stringboot_hieugui.response.ProductDetailResponse;
 import com.example.stringboot_hieugui.response.ProductResponse;
@@ -30,16 +31,12 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     // productDetail
 
-    @Query("SELECT NEW com.example.stringboot_hieugui.response.ProductDetailResponse(p.produceName , p.color, p.quantity, p.sellPrice, p.originPrice ,b.brandName, sc.subCateName, s.statusName) " +
+    @Query("SELECT NEW com.example.stringboot_hieugui.response.ProductDetailResponse(p.produceName, p.color, p.quantity, p.sellPrice, p.originPrice, sc.subCateName, s.statusName) " +
             "FROM Product p " +
             "JOIN p.subCategory sc " +
             "JOIN p.status s " +
-            "JOIN p.listBrand b")
+            "WHERE p.idProduct = :id")
     Optional<ProductDetailResponse> findProductDetailResponseById(Long id);
-
-
-
-
 
 
 }

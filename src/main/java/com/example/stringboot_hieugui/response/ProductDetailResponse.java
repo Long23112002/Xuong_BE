@@ -1,6 +1,9 @@
 package com.example.stringboot_hieugui.response;
 
+import com.example.stringboot_hieugui.entity.Brand;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,7 +15,6 @@ public class ProductDetailResponse {
     private Long quantity;
     private Double sellPrice;
     private Double originPrice;
-    private String brandName;
     private String subCategoryName;
     private String statusName;
 }

@@ -1,5 +1,6 @@
 package com.example.stringboot_hieugui.controller;
 
+import com.example.stringboot_hieugui.response.ProductBrandResponse;
 import com.example.stringboot_hieugui.response.ProductDetailResponse;
 import com.example.stringboot_hieugui.service.ProductDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ public class ProductDetailController {
 
     @GetMapping("/getAllProductDetail/{id}")
     public ResponseEntity<?> getAllProductDetail(@PathVariable Long id) {
-        Optional<ProductDetailResponse> productDetailResponse = Optional.ofNullable(productDetailService.findProductDetailResponseById(id));
+        Optional<ProductBrandResponse> productDetailResponse = Optional.ofNullable(productDetailService.findProductDetailResponseById(id));
         return ResponseEntity.ok(productDetailResponse);
     }
 }
