@@ -69,9 +69,9 @@ public class ProductImpl implements ProductService {
 
     @Override
     public String saveProduct(ProductRequest productRequest) {
-        Optional<Brand> brandId = brandRepository.findById(productRequest.getIdBrand());
-        Optional<SubCategory> subCategoryId = subCategoryRepository.findById(productRequest.getIdSubCategory());
-        Optional<Status> statusId = statusRepository.findById(productRequest.getIdStatus());
+        Optional<Brand> brandId = Optional.ofNullable(brandRepository.findByBrandName(productRequest.getBrandName()));
+        Optional<SubCategory> subCategoryId = Optional.ofNullable(subCategoryRepository.findBySubCateName(productRequest.getSubCategoryName()));
+        Optional<Status> statusId = Optional.ofNullable(statusRepository.findByStatusName(productRequest.getStatusName()));
         if(brandId.isEmpty()){
             return "Brand not found";
         }

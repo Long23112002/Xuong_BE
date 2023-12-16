@@ -1,6 +1,5 @@
 package com.example.stringboot_hieugui.repository;
 
-import com.example.stringboot_hieugui.entity.Brand;
 import com.example.stringboot_hieugui.entity.Product;
 import com.example.stringboot_hieugui.response.ProductDetailResponse;
 import com.example.stringboot_hieugui.response.ProductResponse;

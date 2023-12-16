@@ -1,7 +1,6 @@
 package com.example.stringboot_hieugui.controller;
 
 import com.example.stringboot_hieugui.response.ProductBrandResponse;
-import com.example.stringboot_hieugui.response.ProductDetailResponse;
 import com.example.stringboot_hieugui.service.ProductDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +14,7 @@ import java.util.Optional;
 public class ProductDetailController {
 
     private ProductDetailService productDetailService;
+
     @Autowired
     public void setProductDetailService(ProductDetailService productDetailService) {
         this.productDetailService = productDetailService;

@@ -9,10 +9,13 @@ import java.util.List;
 
 @Repository
 public interface BrandRepository extends JpaRepository<Brand, Long> {
-
+    Brand findByBrandName(String brandName);
     @Query(nativeQuery = true , value = "SELECT brand_name from brand b join  product_brand pb on b.id_brand = pb.id_brand\n" +
             "  join product on pb.id_product = product .id_product\n" +
             "  where product.id_product = :idProduct")
     List<String> findBrandNameByidProduct(Long idProduct);
+
+    @Query(nativeQuery = true, value = " select brand_name from brand")
+    List<String> findAllBrandName();
 
 }

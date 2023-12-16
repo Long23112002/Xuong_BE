@@ -22,13 +22,10 @@ public class ProductRequest {
     private Double sellPrice;
     @Positive(message = "Origin price must be positive or zero")
     private Double originPrice;
-    @NotNull(message = "ID brand must not be null")
-    @Positive(message = "ID brand must be positive or zero")
-    private Long idBrand;
-    @NotNull(message = "ID subcategory must not be null")
-    @Positive(message = "ID subcategory must be positive or zero")
-    private Long idSubCategory;
-    @NotNull(message = "ID Status must not be null")
-    @Positive(message = "ID Status must be positive or zero")
-    private Long idStatus;
+    @NotNull(message = "Brand name must not be null")
+    private String brandName;
+    @NotNull(message = "Subcategory name must not be null")
+    private String subCategoryName;
+    @NotNull(message = "Status name must not be null")
+    private String statusName;
 }
